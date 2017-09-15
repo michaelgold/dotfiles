@@ -1,0 +1,89 @@
+# [Created by task 2.5.0 9/3/2017 16:41:34]
+# Taskwarrior program configuration file.
+# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
+# 'man task-sync' or 'man taskrc'
+
+# Here is an example of entries that use the default, override and blank values
+#   variable=foo   -- By specifying a value, this overrides the default
+#   variable=      -- By specifying no value, this means no default
+#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
+
+# Use the command 'task show' to see all defaults and overrides
+
+# Files
+data.location=~/.task
+
+
+
+taskd.certificate=~/.intheam/private.certificate.pem 
+taskd.key=~/.intheam/private.key.pem 
+taskd.ca=~/.intheam/ca.cert.pem 
+taskd.server=taskwarrior.inthe.am:53589 
+taskd.credentials=inthe_am/goldmichael/10eb86f3-bb61-48a9-a287-2457a9961ace 
+taskd.trust=ignore hostname
+
+# Color theme (uncomment one to use)
+#include /usr/share/task/rc/light-16.theme
+#include /usr/share/doc/task/rc/light-256.theme
+#include /usr/share/doc/task/rc/dark-16.theme
+#include /usr/share/task/dark-256.theme
+#include /usr/share/doc/task/rc/dark-red-256.theme
+#include /usr/share/doc/task/rc/dark-green-256.theme
+#include /usr/share/doc/task/rc/dark-blue-256.theme
+#include /usr/share/doc/task/rc/dark-violets-256.theme
+#include /usr/share/doc/task/rc/dark-yellow-green.theme
+#include /usr/share/task/dark-gray-256.theme
+include /usr/share/task/dark-gray-blue-256.theme
+#include /usr/share/task/solarized-dark-256.theme
+#include /usr/share/doc/task/rc/solarized-light-256.theme
+#include /usr/share/doc/task/rc/no-color.theme
+
+
+color=on
+
+
+
+urgency.user.tag.next.coefficient         = 15.0 # +next tag
+urgency.due.coefficient                   = 12.0 # overdue or near due date
+urgency.blocking.coefficient              =  8.0 # blocking other tasks
+urgency.uda.priority.H.coefficient        =  6.0 # high Priority
+urgency.uda.priority.M.coefficient        =  3.9 # medium Priority
+urgency.uda.priority.L.coefficient        =  1.8 # low Priority
+urgency.active.coefficient                =  4.0 # already started tasks
+urgency.scheduled.coefficient             =  4.0 # scheduled tasks
+urgency.age.coefficient                   =  2.0 # coefficient for age
+urgency.annotations.coefficient           =  1.0 # has annotations
+urgency.tags.coefficient                  =  1.0 # has tags
+urgency.project.coefficient               =  1.0 # assigned to any project
+urgency.blocked.coefficient               =  -5.0 # blocked by other tasks
+urgency.waiting.coefficient               =  -3.0 # waiting task
+#urgency.user.project.<project>.coefficient=  5.0 # specific project
+#urgency.user.tag.<tag>.coefficient        =  5.0 # specific tag
+#urgency.uda.<name>.coefficient            =  5.0 # specific UDA
+urgency.user.tag.wating.coefficient        =  -15.0 # specific tag
+
+report.list.columns=id,status.short,project,priority,due,depends,recur,urgency,tags,wait.remaining,description
+report.list.labels=ID,S,Project,Pri,Due,Depends,Recur,Score,Tags,Wait,Description & Annotation
+report.list.sort=urgency-
+# report.list.sort=due+,priority-,project+
+report.list.filter=status:pending or status:waiting or status:blocked or status:completed
+report.list.dateformat= a M-D
+alias.ls=list
+alias.g=_get
+alias.waiting=list (+waiting and status:pending) or status:waiting 
+
+
+#rc.detection=off 
+context.work=pro:holojam or pro:frl or pro:clubster or pro:inbox
+context.home=pro:home
+
+report.work.columns         = id,description,depends,project,tags
+report.work.description     = Most urgent tasks for work
+report.work.filter          = status:pending limit:page +READY +UNBLOCKED -waiting (pro:holojam or pro:frl or pro:clubster or pro:inbox)
+report.work.labels          = ID,Description,Deps,Project,Tag
+report.work.sort            = urgency-
+
+
+
+
+default.command=work
