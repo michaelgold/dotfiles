@@ -1,0 +1,36 @@
+[general]
+# Here you define a comma separated list of targets.  Each of them must have a
+# section below determining their properties, how to query them, etc.  The name
+# is just a symbol, and doesn't have any functional importance.
+targets = my_gmail
+
+# If unspecified, the default taskwarrior config will be used.
+#taskrc = /path/to/.taskrc
+
+# Setting this to true will shorten links with http://da.gd/
+ishorten = True
+
+# Setting this to True will include a link to the ticket in the description
+inline_links = False
+
+# Setting this to True will include a link to the ticket as an annotation
+annotation_links = True
+
+# Setting this to True will include issue comments and author name in task
+# annotations
+annotation_comments = True
+
+
+
+
+[notifications]
+notifications = True
+backend = gobject
+finished_querying_sticky = False
+task_crud_sticky = True
+only_on_new_tasks = True
+
+
+[my_gmail]
+service = gmail 
+
