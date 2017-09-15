@@ -216,6 +216,10 @@ exec --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id /usr/bin/blueman-applet 
 
 
+# load audio applet
+exec --no-startup-id /usr/bin/pasystray 
+
+
 # exec --no-startup-id /usr/bin/xrandr --output HDMI-1 --off --output DP-1 --off --output DP-2 --primary --mode 1920x1080 --scale 2x2 --fb 3840x4320 --pos 0x0 --rotate normal 
 # exec --no-startup-id /usr/bin/xrandr --output eDP-1 --mode 3840x2160 --scale 1x1 --pos 0x2160 --rotate normal
 
