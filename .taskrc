@@ -24,7 +24,7 @@ taskd.trust=ignore hostname
 
 # Color theme (uncomment one to use)
 #include /usr/share/task/rc/light-16.theme
-#include /usr/share/doc/task/rc/light-256.theme
+include ~/.config/task/dark-gray-blue-256.theme
 #include /usr/share/doc/task/rc/dark-16.theme
 #include /usr/share/task/dark-256.theme
 #include /usr/share/doc/task/rc/dark-red-256.theme
@@ -33,7 +33,7 @@ taskd.trust=ignore hostname
 #include /usr/share/doc/task/rc/dark-violets-256.theme
 #include /usr/share/doc/task/rc/dark-yellow-green.theme
 #include /usr/share/task/dark-gray-256.theme
-include /usr/share/task/dark-gray-blue-256.theme
+#include /usr/share/task/dark-gray-blue-256.theme
 #include /usr/share/task/solarized-dark-256.theme
 #include /usr/share/doc/task/rc/solarized-light-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
@@ -43,6 +43,7 @@ color=on
 
 
 
+urgency.user.tag.wip.coefficient        =  15.0 # specific tag
 urgency.user.tag.next.coefficient         = 15.0 # +next tag
 urgency.due.coefficient                   = 12.0 # overdue or near due date
 urgency.blocking.coefficient              =  8.0 # blocking other tasks
@@ -56,6 +57,7 @@ urgency.annotations.coefficient           =  1.0 # has annotations
 urgency.tags.coefficient                  =  1.0 # has tags
 urgency.project.coefficient               =  1.0 # assigned to any project
 urgency.blocked.coefficient               =  -5.0 # blocked by other tasks
+urgency.user.tag.waiting.coefficient        =  -3.0 # specific tag
 urgency.waiting.coefficient               =  -3.0 # waiting task
 #urgency.user.project.<project>.coefficient=  5.0 # specific project
 #urgency.user.tag.<tag>.coefficient        =  5.0 # specific tag
