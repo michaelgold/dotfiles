@@ -1,0 +1,18 @@
+[Unit]
+Description=Lock the screen on resume from suspend
+Before=sleep.target
+Before=suspend.target
+
+
+[Service]
+User=michael
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/home/michael/.bin/scripts/lock.sh
+
+[Install]
+WantedBy=sleep.target
+WantedBy=suspend.target
+
+
+
