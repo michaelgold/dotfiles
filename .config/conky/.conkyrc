@@ -1,16 +1,18 @@
 # Create own window instead of using desktop (required in nautilus)
 own_window yes
+own_window_transparent no
 own_window_hints undecorated,below,skip_taskbar
-background no
+background yes
+own_window_type override
 # Use double buffering (reduces flicker, may not work for everyone)
 double_buffer yes
 # fiddle with window
 use_spacer yes
 use_xft yes
 # Update interval in seconds
-update_interval 3.0
+update_interval 10.0
 # Minimum size of text area
-minimum_size 400 5
+minimum_size 250 5
 # Draw shades?
 draw_shades yes
 # Text stuff
@@ -31,20 +33,20 @@ default_outline_color white
 own_window_colour brown
 own_window_transparent yes
 # Text alignment, other possible values are commented
-alignment top_left
-#alignment top_right
+#alignment top_left
+alignment top_right
 #alignment bottom_left
 #alignment bottom_right
 # Gap between borders of screen and text
-gap_x 10
-gap_y 10
+gap_x 40
+gap_y 40
 # stuff after 'TEXT' will be formatted on screen
 override_utf8_locale no
-xftfont Terminus:size=8
+xftfont Terminus:size=9
 xftalpha 0.8
 TEXT
-${offset 0}${color slate grey}${time %a, } ${color }${time %e %B %G}
-${offset 0}${color slate grey}${time %Z,    }${color }${time %H:%M:%S}
+${offset 0}${color slate grey}${time %a, } ${color }${time %B %e %G}
+${offset 0}${color slate grey}Time: ${color }${time %I:%M:%S %p}
 ${offset 0}${color slate grey}UpTime: ${color }$uptime
 ${offset 0}${color slate grey}Kern:${color }$kernel
 ${offset 0}${color slate grey}CPU:${color } $cpu% ${acpitemp}C

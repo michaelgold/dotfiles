@@ -47,7 +47,7 @@ bindsym $mod+Shift+b exec /usr/bin/chromium-browser
 bindsym $mod+w kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+space exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -95,7 +95,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -130,7 +130,8 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # start the screensave and lock the screen
-bindsym $mod+Shift+s exec --no-startup-id gnome-screensaver-command -l
+#bindsym $mod+Shift+s exec --no-startup-id gnome-screensaver-command -l
+bindsym $mod+Shift+s exec --no-startup-id ~/.bin/scripts/lock.sh
 
 # show active tasks
 bindsym $mod+Shift+Return exec --no-startup-id /home/michael/src/taskwarrior-notifications/task-popup.sh
@@ -206,7 +207,10 @@ exec --no-startup-id syndaemon -i 1.0 -K -R -t  #disable touchpad on typing
 exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-150 TapButton1=0 TapButton2=0 PalmDetect=1 PalmMinWidth=10 PalmMinZ=0 #natural scrolling and no tap to click
 exec --no-startup-id /usr/bin/xinput set-prop 'MX Anywhere 2' 'Evdev Scrolling Distance' 1, 1, 1 #scrolling speed
 exec --no-startup-id feh -Z --bg-fill ~/Pictures/misc/lightbulb.jpg
+exec --no-startup-id conky -c ~/.config/conky/.conkyrc
 
+
+exec --no-startup-id xautolock -time 1 -locker '~/.bin/scripts/lock.sh'
 
 exec --no-startup-id /usr/local/bin/task-web #taskwarrior web
 #exec --no-startup-id /usr/bin/imwheel --kill --buttons "4 5" #natural mouse scrolling

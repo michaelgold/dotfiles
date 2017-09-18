@@ -116,6 +116,7 @@ alias t="task"
 alias tn="task next"
 alias tg="task _get"
 
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
