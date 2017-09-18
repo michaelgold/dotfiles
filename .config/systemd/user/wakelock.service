@@ -6,6 +6,7 @@ Before=suspend.target
 
 [Service]
 User=michael
+Group=michael
 Type=forking
 Environment=DISPLAY=:0
 ExecStart=/home/michael/.bin/scripts/lock.sh
