@@ -1,0 +1,55 @@
+alignment top_left
+background yes
+cpu_avg_samples 2
+#default_color 656667
+#default_outline_color 828282
+#default_shade_color 000000
+double_buffer yes
+draw_borders no
+draw_graph_borders no
+draw_outline no
+draw_shades yes
+# Gap between borders of screen and text
+gap_x 40
+gap_y 20
+#maximum_width 600
+minimum_size 10 100
+no_buffers yes
+override_utf8_locale yes
+own_window yes
+own_window_argb_visual no
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_colour 000000 
+own_window_type override
+total_run_times 0
+update_interval 1
+use_xft yes
+xftfont Monospace:size=9
+xftalpha 0.8
+
+#monitor 1
+default_outline_color 000000
+default_color white
+default_shade_colour black
+#default_color 505050
+#color0 414141
+#color1 9dad9c
+#color2 677166
+
+color0 414141
+color1 a0a0a0
+color2 717171
+
+TEXT
+${execi 30 task rc.defaultheight=15}
+
+
+
+${execi 30 task burndown.daily}
+
+
+
+${execi 30 task timesheet rc.defaultheight=5}
+
+
