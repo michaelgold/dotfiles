@@ -1,0 +1,7 @@
+#!/bin/bash
+task=$1
+args=""
+for i in "${@:2}"
+do args="$args $i"
+done
+task add pro:`task _get $task.project` dep:$task $args
