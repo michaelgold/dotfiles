@@ -1,0 +1,10 @@
+#!/bin/bash
+# runs custom report named: ls
+
+task sum pro:`task _get $1.project`
+printf "\nPending Tasks: "
+task ls pro:`task _get $1.project` status:pending
+printf "\nWaiting Tasks: "
+task ls pro:`task _get $1.project` status:waiting
+printf "\nCompleted Tasks: "
+task ls pro:`task _get $1.project` status:completed

@@ -206,8 +206,11 @@ focus_on_window_activation focus #or smart for urgency notificiations
 exec --no-startup-id syndaemon -i 1.0 -K -R -t  #disable touchpad on typing
 exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-150 TapButton1=0 TapButton2=0 PalmDetect=1 PalmMinWidth=10 PalmMinZ=0 #natural scrolling and no tap to click
 exec --no-startup-id /usr/bin/xinput set-prop 'MX Anywhere 2' 'Evdev Scrolling Distance' 1, 1, 1 #scrolling speed
-exec --no-startup-id feh -Z --bg-fill ~/Pictures/misc/lightbulb.jpg
+#exec --no-startup-id feh -Z --bg-fill ~/Pictures/misc/invader.jpg
+exec --no-startup-id xsetroot -solid "#222222" 
 exec --no-startup-id conky -c ~/.config/conky/.conkyrc
+exec --no-startup-id conky -c ~/.config/conky/.conkytw
+exec --no-startup-id conky -c ~/.config/conky/.conkytwp
 
 
 exec --no-startup-id xautolock -time 1 -locker '~/.bin/scripts/lock.sh'
@@ -235,8 +238,5 @@ exec --no-startup-id dunst
 
 #exec --no-startup-id /usr/bin/xrandr --fb 1920x2160 --output DP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-2 --off --output eDP-1 --mode 1920x1080  --pos 0x1080 --rotate normal
 
-
-# enable multiple monitors on HiDPI
-exec --no-startup-id /usr/bin/xrandr --output HDMI-1 --off --output DP-1 --pos 0x0 --output eDP-1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal --output DP-2 --pos 0x0 --rotate normal
 
 for_window [class="Chromium-browser" instance="crx_knipolnnllmklapflnccelgolnpehhpl"] floating disable

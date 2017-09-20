@@ -42,7 +42,7 @@ gap_x 40
 gap_y 40
 # stuff after 'TEXT' will be formatted on screen
 override_utf8_locale no
-xftfont Terminus:size=9
+xftfont Monospace:size=9
 xftalpha 0.8
 TEXT
 ${offset 0}${color slate grey}${time %a, } ${color }${time %B %e %G}
