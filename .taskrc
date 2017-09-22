@@ -64,6 +64,15 @@ urgency.waiting.coefficient               =  -3.0 # waiting task
 #urgency.uda.<name>.coefficient            =  5.0 # specific UDA
 urgency.user.tag.wating.coefficient        =  -15.0 # specific tag
 
+
+report.shortlist.columns=id,description
+report.shortlist.labels=ID,Tasks
+report.shortlist.sort=urgency-
+# report.list.sort=due+,priority-,project+
+report.shortlist.filter=status:pending or status:waiting or status:blocked or status:completed
+report.shortlist.dateformat= a M-D
+
+
 report.list.columns=id,status.short,project,priority,due,depends,recur,urgency,tags,wait.remaining,description
 report.list.labels=ID,S,Project,Pri,Due,Depends,Recur,Score,Tags,Wait,Description & Annotation
 report.list.sort=urgency-
@@ -72,6 +81,7 @@ report.list.filter=status:pending or status:waiting or status:blocked or status:
 report.list.dateformat= a M-D
 alias.ls=list
 alias.g=_get
+alias.waitshort=shortlist (+waiting and status:pending) or status:waiting 
 alias.waiting=list (+waiting and status:pending) or status:waiting 
 
 
