@@ -42,6 +42,6 @@ color1 a0a0a0
 color2 717171
 
 TEXT
-${execi 30 task sum}
+${execi 30 task sum pro:inbox or pro:frl or pro:holojam}
 
-
+${execi 30 timew sum}

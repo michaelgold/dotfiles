@@ -20,5 +20,6 @@ else
   mv $TEMPDIR/head_0.png $TEMPDIR/screen.png
 fi
 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
-i3lock -u -i $TEMPDIR/screen.png
+i3lock -i $TEMPDIR/screen.png
+#i3lock -u -i $TEMPDIR/screen.png
 rm $TEMPDIR/screen.png

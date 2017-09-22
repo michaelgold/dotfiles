@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/michael/.oh-my-zsh
+export ZSH=/home/michael/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -51,7 +51,7 @@
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git taskwarrior)
+plugins=(git taskwarrior vi-mode)
 export TERM=xterm-256color
 
 POWERLEVEL9K_MODE='awesome-patched'
@@ -91,8 +91,6 @@ source $ZSH/oh-my-zsh.sh
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
 
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(custom_twtask_id custom_twtask time)
-
 
 
 POWERLEVEL9K_CUSTOM_TWTASK_ID="echo $(task _get `task +ACTIVE ids`.id)"
@@ -105,6 +103,8 @@ POWERLEVEL9K_CUSTOM_TWTASK="echo $(task _get `task +ACTIVE ids`.description)"
 POWERLEVEL9K_CUSTOM_TWTASK_FOREGROUND="white"
 POWERLEVEL9K_CUSTOM_TWTASK_BACKGROUND="blue"
 
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode custom_twtask_id custom_twtask time)
+
 
 
 POWERLEVEL9K_OS_ICON_BACKGROUND="white"
@@ -115,7 +115,7 @@ POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
 alias t="task"
 alias tn="task next"
 alias tg="task _get"
-
+bindkey "jj" vi-cmd-mode 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
