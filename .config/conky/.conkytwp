@@ -12,7 +12,7 @@ draw_shades yes
 # Gap between borders of screen and text
 gap_x 860
 gap_y 20
-#maximum_width 600
+maximum_width 710
 minimum_size 10 100
 no_buffers yes
 override_utf8_locale yes
