@@ -129,6 +129,9 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# start pomodoro daemon
+exec --no-startup-id /usr/share/pomodoroTasks2/pomodoro-daemon.py 
+
 # start the screensave and lock the screen
 #bindsym $mod+Shift+s exec --no-startup-id gnome-screensaver-command -l
 bindsym $mod+Shift+s exec --no-startup-id ~/.bin/scripts/lock.sh
