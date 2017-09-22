@@ -206,7 +206,7 @@ focus_on_window_activation focus #or smart for urgency notificiations
 
 
 # load on start
-exec --no-startup-id syndaemon -i 1.0 -K -R -t  #disable touchpad on typing
+exec --no-startup-id syndaemon -i 3.0 -K -R -t  #disable touchpad on typing
 exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-150 TapButton1=0 TapButton2=0 PalmDetect=1 PalmMinWidth=10 PalmMinZ=0 #natural scrolling and no tap to click
 exec --no-startup-id /usr/bin/xinput set-prop 'MX Anywhere 2' 'Evdev Scrolling Distance' 1, 1, 1 #scrolling speed
 #exec --no-startup-id feh -Z --bg-fill ~/Pictures/misc/invader.jpg
