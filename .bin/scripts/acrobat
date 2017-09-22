@@ -1,0 +1,3 @@
+#!/bin/bash
+wine /home/michael/.wine/drive_c/Program\ Files/Adobe/Acrobat\ 10.0/Acrobat/Acrobat.exe  
+
