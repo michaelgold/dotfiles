@@ -1,0 +1,3 @@
+#!/bin/bash
+wine /home/michael/.wine/drive_c/Program\ Files/Adobe/Adobe\ Illustrator\ CS6/Support\ Files/Contents/Windows/Illustrator.exe
+
