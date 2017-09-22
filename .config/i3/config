@@ -38,7 +38,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start a browser
-bindsym $mod+Shift+b exec /usr/bin/chromium-browser --disable-gpu-driver-bug-workarounds --enable-native-gpu-memory-buffers --enable-checker-imaging 
+bindsym $mod+Shift+b exec /usr/bin/chromium-browser --disable-gpu-driver-bug-workarounds --enable-native-gpu-memory-buffers 
 
 
 
