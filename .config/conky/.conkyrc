@@ -72,10 +72,10 @@ ${offset 0}${color slate grey}ROOT:    ${color }${fs_free /}/${fs_size /}
 ${offset 0}${fs_bar 3,100 /}
 ${offset 0}${color slate grey}HOME:  ${color }${fs_free /home}/${fs_size /home}
 ${offset 0}${fs_bar 3,100 /home}
-${offset 0}${color slate grey}NET:
-${offset 0}${color}Up: ${color }${upspeed eth0} k/s
-${offset 0}${upspeedgraph eth0 20,130 000000 ffffff}
-${offset 0}${color}Down: ${color }${downspeed eth0}k/s${color}
-${offset 0}${downspeedgraph eth0 20,130 000000 ffffff}
+# ${offset 0}${color slate grey}NET:
+# ${offset 0}${color}Up: ${color }${upspeed eth0} k/s
+# ${offset 0}${upspeedgraph eth0 20,130 000000 ffffff}
+# ${offset 0}${color}Down: ${color }${downspeed eth0}k/s${color}
+# ${offset 0}${downspeedgraph eth0 20,130 000000 ffffff}
 
 ${execi 30 task waitshort rc.defaultwidth=30 rc.detection=off}
