@@ -39,7 +39,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start a browser
-bindsym $mod+Shift+b exec /usr/bin/chromium-browser
+bindsym $mod+Shift+b exec /usr/bin/chromium-browser --disable-gpu-driver-bug-workarounds --enable-native-gpu-memory-buffers --enable-checker-imaging 
 
 
 
@@ -213,7 +213,7 @@ exec --no-startup-id conky -c ~/.config/conky/.conkytw
 exec --no-startup-id conky -c ~/.config/conky/.conkytwp
 
 
-exec --no-startup-id xautolock -time 1 -locker '~/.bin/scripts/lock.sh'
+exec --no-startup-id xautolock -time 1 -locker '~/.bin/scripts/lock.sh' -notify 5 -notifier "notify-send --expire-time=3000 'Locking'"
 
 exec --no-startup-id /usr/local/bin/task-web #taskwarrior web
 #exec --no-startup-id /usr/bin/imwheel --kill --buttons "4 5" #natural mouse scrolling
