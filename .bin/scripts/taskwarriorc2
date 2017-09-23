@@ -1,3 +1,4 @@
 #!/bin/bash
-/home/michael/src/taskwarriorc2/node_modules/.bin/electron /home/michael/src/taskwarriorc2/desktop.js
-
+#/home/michael/src/taskwarriorc2/node_modules/.bin/electron /home/michael/src/taskwarriorc2/desktop.js
+# using electron packaged bin
+/home/michael/src/taskwarriorc2/taskwarriorc2-linux-x64/taskwarriorc2
