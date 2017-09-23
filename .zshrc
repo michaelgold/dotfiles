@@ -122,4 +122,4 @@ bindkey "jj" vi-cmd-mode
 
 
 
-alias config='/usr/bin/git --git-dir=/home/michael/.cfg/ --work-tree=/home/michael'
+alias config="git --git-dir=/home/michael/.cfg/ --work-tree=/home/michael"
