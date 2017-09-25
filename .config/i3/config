@@ -42,7 +42,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # start a browser
 bindsym $mod+Shift+b exec /usr/bin/chromium-browser --disable-gpu-driver-bug-workarounds --enable-native-gpu-memory-buffers 
 
-
+# take a screenshot
+bindsym ctrl+4 exec screenshot.sh
 
 # kill focused window
 bindsym $mod+w kill
