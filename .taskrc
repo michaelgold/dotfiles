@@ -89,15 +89,15 @@ alias.waiting=list (+waiting and status:pending) or status:waiting
 context.work=pro:holojam or pro:frl or pro:clubster or pro:inbox
 context.home=pro:home
 
-report.work.columns         = id,depends,tags,project,description
+report.work.columns         = id,depends,due,tags,project,description
 # report.work.columns         = id,project,description,depends,tags
 report.work.description     = Most urgent tasks for work
-report.work.filter          = status:pending limit:page -SCHEDULED -WAITING (pro:holojam or pro:frl or pro:clubster or pro:inbox)
+report.work.filter          = status:pending limit:page (+READY or (-SCHEDULED -WAITING)) (pro:holojam or pro:frl or pro:clubster or pro:inbox)
 # report.work.filter          = status:pending limit:page +READY +UNBLOCKED -waiting (pro:holojam or pro:frl or pro:clubster or pro:inbox)
-report.work.labels          = ID,D,Tag,Project,Description
+report.work.labels          = ID,D,Due,Tag,Project,Description
 # report.work.labels          = ID,Project,Description,Deps,Tag
 report.work.sort            = urgency-
-
+report.work.dateformat	    = m/d
 
 
 
