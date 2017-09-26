@@ -1,0 +1,5 @@
+#!/bin/bash
+
+kill $(ps aux | grep pomodoro-daemon.py | awk '{ print $2 }')
+kill $(ps aux | grep "python ./pomodoro-systray.py" | awk '{ print $2 }')
+exec /usr/share/pomodoroTasks2/pomodoro-daemon.py 

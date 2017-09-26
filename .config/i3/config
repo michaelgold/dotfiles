@@ -243,7 +243,7 @@ exec --no-startup-id dunst
 #exec --no-startup-id /usr/bin/xrandr --fb 1920x2160 --output DP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-2 --off --output eDP-1 --mode 1920x1080  --pos 0x1080 --rotate normal
 
 # start pomodoro daemon
-exec --no-startup-id /usr/share/pomodoroTasks2/pomodoro-daemon.py 
+exec --no-startup-id pomodoro
 
 
 for_window [class="Chromium-browser" instance="crx_knipolnnllmklapflnccelgolnpehhpl"] floating disable border pixel 4
