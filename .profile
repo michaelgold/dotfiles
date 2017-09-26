@@ -18,5 +18,5 @@ fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.bin" ] ; then
-    PATH="$HOME/.bin:$HOME/.bin/scripts:$PATH"
+    PATH="$HOME/.bin:$HOME/.bin/scripts:$HOME/.screenlayout:$PATH"
 fi
