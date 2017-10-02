@@ -105,31 +105,64 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+
+# Workspaces
+set $WS0 0:main
+set $WS1 1:msg
+set $WS2 2:www
+set $WS3 3:dev
+set $WS4 4:bkg
+set $WS5 5:ext
+set $WS6 6:art
+set $EXT0 ext0
+set $EXT1 ext1
+set $EXT2 ext2
+set $EXT3 ext3
+workspace $EXT0 output DVI-D-0
+workspace $EXT1 output HDMI1
+workspace $EXT2 output HDMI2
+workspace $EXT3 output DP1
+
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $MOD+0 workspace $WS0
+bindsym $MOD+1 workspace $WS1
+bindsym $MOD+2 workspace $WS2
+bindsym $MOD+3 workspace $WS3
+bindsym $MOD+4 workspace $WS4
+bindsym $MOD+5 workspace $WS5
+bindsym $MOD+6 workspace $WS6
+
+
 bindcode Mod1+23 workspace next
 bindcode Mod1+Shift+23 workspace prev
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $MOD+Shift+0 move container to workspace $WS0
+bindsym $MOD+Shift+1 move container to workspace $WS1
+bindsym $MOD+Shift+2 move container to workspace $WS2
+bindsym $MOD+Shift+3 move container to workspace $WS3
+bindsym $MOD+Shift+4 move container to workspace $WS4
+bindsym $MOD+Shift+5 move container to workspace $WS5
+bindsym $MOD+Shift+6 move container to workspace $WS6
+
+
+## Application preferences
+assign [class="Thunderbird"] $WS1
+assign [class="Chromium-browser" instance="crx_knipolnnllmklapflnccelgolnpehhpl"] $WS1
+assign [class="Chromium-browser" instance="mail.google.com__mail_u_0"] $WS1
+assign [class="Firefox"] $WS2
+assign [class="Chromium-browser"] $WS2
+assign [class="Sublime_text"] $WS3
+assign [class="Pinegrow"] $WS3
+assign [class="jetbrains-pycharm"] $WS3
+assign [class="Atom"] $WS3
+assign [class="Spotify"] $WS4
+assign [class="pavucontrol"] $WS4
+assign [class="vmware"] $WS5
+assign [class="MyPaint"] $WS6
+
+
+
 
 # start the screensave and lock the screen
 #bindsym $mod+Shift+s exec --no-startup-id gnome-screensaver-command -l
