@@ -148,6 +148,7 @@ bindsym $MOD+Shift+6 move container to workspace $WS6
 
 ## Application preferences
 assign [class="Thunderbird"] $WS1
+assign [class="Slack"] $WS1
 assign [class="Chromium-browser" instance="crx_knipolnnllmklapflnccelgolnpehhpl"] $WS1
 assign [class="Chromium-browser" instance="mail.google.com__mail_u_0"] $WS1
 assign [class="Firefox"] $WS2
@@ -156,7 +157,7 @@ assign [class="Sublime_text"] $WS3
 assign [class="Pinegrow"] $WS3
 assign [class="jetbrains-pycharm"] $WS3
 assign [class="Atom"] $WS3
-assign [class="Spotify"] $WS4
+assign [class="spotify"] $WS4
 assign [class="pavucontrol"] $WS4
 assign [class="vmware"] $WS5
 assign [class="MyPaint"] $WS6
@@ -242,7 +243,7 @@ focus_on_window_activation focus #or smart for urgency notificiations
 exec --no-startup-id syndaemon -i 2.0 -K -R -t  #disable touchpad on typing
 exec --no-startup-id synclient HorizEdgeScroll=0 VertEdgeScroll=0 VertScrollDelta=-150 TapButton1=0 TapButton2=0 CoastingSpeed=8 PalmDetect=1 PalmMinWidth=1 PalmMinZ=0 #natural scrolling and no tap to click
 exec --no-startup-id /usr/bin/xinput set-prop 'MX Anywhere 2' 'Evdev Scrolling Distance' 1, 1, 1 #scrolling speed
-exec --no-startup-id feh -Z --bg-fill /usr/share/backgrounds/Passion_by_Vilia_Majere.jpg
+exec --no-startup-id feh -Z --bg-fill ~/Pictures/misc/blackpoly.png
 
 # exec --no-startup-id xsetroot -solid "#222222" 
 exec --no-startup-id conky -c ~/.config/conky/.conkyrc
