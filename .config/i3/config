@@ -243,7 +243,7 @@ focus_on_window_activation focus #or smart for urgency notificiations
 exec --no-startup-id syndaemon -i 2.0 -K -R -t  #disable touchpad on typing
 exec --no-startup-id synclient HorizEdgeScroll=0 VertEdgeScroll=0 VertScrollDelta=-150 TapButton1=0 TapButton2=0 CoastingSpeed=8 PalmDetect=1 PalmMinWidth=1 PalmMinZ=0 #natural scrolling and no tap to click
 exec --no-startup-id /usr/bin/xinput set-prop 'MX Anywhere 2' 'Evdev Scrolling Distance' 1, 1, 1 #scrolling speed
-exec --no-startup-id feh -Z --bg-fill ~/Pictures/misc/blackpoly.png
+exec --no-startup-id feh -Z --bg-fill /home/michael/Pictures/misc/reflect.jpg
 
 # exec --no-startup-id xsetroot -solid "#222222" 
 exec --no-startup-id conky -c ~/.config/conky/.conkyrc
