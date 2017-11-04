@@ -81,6 +81,13 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# enter / leave passthrough mode
+mode "passthrough" {
+    bindsym $mod+Shift+p mode "default"
+}
+bindsym $mod+Shift+p mode "passthrough"
+
+
 # split in horizontal orientation
 bindsym $mod+b split h
 
