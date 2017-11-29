@@ -1,0 +1,2 @@
+#!/bin/bash
+wine /home/michael/.wine/drive_c/Program\ Files/Amazon/Kindle/Kindle.exe
