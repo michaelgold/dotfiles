@@ -1,6 +1,13 @@
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
+set number
+set numberwidth=4
+syntax enable
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+
 imap jj <esc>
 " disable mouse interactions "
 set mouse=nicr
