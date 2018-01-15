@@ -86,4 +86,7 @@ imap <C-ScrollWheelRight> <nop>
 
 " vim-taskwarrior config
 let g:task_rc_override = 'rc.defaultwidth=0'
-
+" default task report type
+let g:task_report_name     = 'open'
+" custom reports have to be listed explicitly to make them available
+let g:task_report_command  = ['open']

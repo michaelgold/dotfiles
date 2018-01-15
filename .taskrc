@@ -99,6 +99,15 @@ report.work.labels          = ID,D,Due,Tag,Project,Description
 report.work.sort            = urgency-
 report.work.dateformat	    = m/d
 
+report.open.columns         = id,depends,due,tags,project,description.truncated_count
+# report.work.columns         = id,project,description,depends,tags
+report.open.description     = Most urgent tasks for work
+report.open.filter          = status:pending limit:page (+READY or (-SCHEDULED -WAITING))
+# report.work.filter          = status:pending limit:page +READY +UNBLOCKED -waiting (pro:holojam or pro:frl or pro:clubster or pro:inbo    x)
+report.open.labels          = ID,D,Due,Tag,Project,Description
+# report.work.labels          = ID,Project,Description,Deps,Tag
+report.open.sort            = urgency-
+report.open.dateformat      = m/d
 
 
 default.command=work

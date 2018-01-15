@@ -119,6 +119,7 @@ POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
 alias t="task"
 alias tn="task next"
 alias tg="task _get"
+alias tw="vim -c 'TW'"
 bindkey "jj" vi-cmd-mode 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
