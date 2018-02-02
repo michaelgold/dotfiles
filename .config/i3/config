@@ -123,6 +123,10 @@ set $WS3 3:
 set $WS4 4:  
 set $WS5 5:  
 set $WS6 6:  
+set $WS7 7:
+set $WS8 8:
+
+
 set $EXT0 ext0
 set $EXT1 ext1
 set $EXT2 ext2
@@ -140,6 +144,8 @@ bindsym $MOD+3 workspace $WS3
 bindsym $MOD+4 workspace $WS4
 bindsym $MOD+5 workspace $WS5
 bindsym $MOD+6 workspace $WS6
+bindsym $MOD+7 workspace $WS7
+bindsym $MOD+8 workspace $WS8
 
 
 bindcode Mod1+23 workspace next
@@ -153,6 +159,8 @@ bindsym $MOD+Shift+3 move container to workspace $WS3
 bindsym $MOD+Shift+4 move container to workspace $WS4
 bindsym $MOD+Shift+5 move container to workspace $WS5
 bindsym $MOD+Shift+6 move container to workspace $WS6
+bindsym $MOD+Shift+7 move container to workspace $WS7
+bindsym $MOD+Shift+8 move container to workspace $WS8
 
 
 ## Application preferences
@@ -170,8 +178,7 @@ assign [class="spotify"] $WS4
 assign [class="pavucontrol"] $WS4
 assign [class="vmware"] $WS5
 assign [class="MyPaint"] $WS6
-
-
+assign [class="VirtualBox" title="win10"] $WS8
 
 
 # start the screensave and lock the screen
