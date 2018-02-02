@@ -110,4 +110,4 @@ report.open.sort            = urgency-
 report.open.dateformat      = m/d
 
 
-default.command=work
+default.command=open
