@@ -12,6 +12,12 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'farseer90718/vim-taskwarrior'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+" Enable python folding for markdown
+let g:markdown_folding=1
+let g:vim_markdown_folding_style_pythonic = 1
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -52,6 +58,17 @@ set showmode
 set number
 set numberwidth=4
 syntax enable
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
+
+
+
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
