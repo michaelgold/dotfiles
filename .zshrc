@@ -1,3 +1,5 @@
+export TERM="xterm-256color"
+
 source $HOME/antigen.zsh
 ANTIGEN_LOG=$HOME/.log/antigen.log
 
