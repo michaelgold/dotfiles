@@ -20,3 +20,5 @@ fi
 if [ -d "$HOME/.bin" ] ; then
     PATH="$HOME/.bin:$HOME/.bin/scripts:$HOME/.screenlayout:$PATH"
 fi
+
+#source $HOME/.zshrc
