@@ -81,32 +81,32 @@ colorscheme solarized
 
 imap jj <esc>
 " disable mouse interactions "
-set mouse=nicr
-map <ScrollWheelUp> <nop>
-map <S-ScrollWheelUp> <nop>
-map <C-ScrollWheelUp> <nop>
-map <ScrollWheelDown> <nop>
-map <S-ScrollWheelDown> <nop>
-map <C-ScrollWheelDown> <nop>
-map <ScrollWheelLeft> <nop>
-map <S-ScrollWheelLeft> <nop>
-map <C-ScrollWheelLeft> <nop>
-map <ScrollWheelRight> <nop>
-map <S-ScrollWheelRight> <nop>
-map <C-ScrollWheelRight> <nop>
-imap <ScrollWheelUp> <nop>
-imap <S-ScrollWheelUp> <nop>
-imap <C-ScrollWheelUp> <nop>
-imap <ScrollWheelDown> <nop>
-imap <S-ScrollWheelDown> <nop>
-imap <C-ScrollWheelDown> <nop>
-imap <ScrollWheelLeft> <nop>
-imap <S-ScrollWheelLeft> <nop>
-imap <C-ScrollWheelLeft> <nop>
-imap <ScrollWheelRight> <nop>
-imap <S-ScrollWheelRight> <nop>
-imap <C-ScrollWheelRight> <nop>
-
+" set mouse=nicr
+" map <ScrollWheelUp> <nop>
+" map <S-ScrollWheelUp> <nop>
+" map <C-ScrollWheelUp> <nop>
+" map <ScrollWheelDown> <nop>
+" map <S-ScrollWheelDown> <nop>
+" map <C-ScrollWheelDown> <nop>
+" map <ScrollWheelLeft> <nop>
+" map <S-ScrollWheelLeft> <nop>
+" map <C-ScrollWheelLeft> <nop>
+" map <ScrollWheelRight> <nop>
+" map <S-ScrollWheelRight> <nop>
+" map <C-ScrollWheelRight> <nop>
+" imap <ScrollWheelUp> <nop>
+" imap <S-ScrollWheelUp> <nop>
+" imap <C-ScrollWheelUp> <nop>
+" imap <ScrollWheelDown> <nop>
+" imap <S-ScrollWheelDown> <nop>
+" imap <C-ScrollWheelDown> <nop>
+" imap <ScrollWheelLeft> <nop>
+" imap <S-ScrollWheelLeft> <nop>
+" imap <C-ScrollWheelLeft> <nop>
+" imap <ScrollWheelRight> <nop>
+" imap <S-ScrollWheelRight> <nop>
+" imap <C-ScrollWheelRight> <nop>
+" 
 " vim-taskwarrior config
 let g:task_rc_override = 'rc.defaultwidth=0'
 " default task report type
