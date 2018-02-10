@@ -34,8 +34,7 @@ floating_modifier $mod
 # exec --no-startup-id /usr/bin/xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
 
 # set window borders to 2 pixel and remove the window title bar
-
-new_window pixel 4
+new_window pixel 1
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
