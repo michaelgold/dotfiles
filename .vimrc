@@ -66,8 +66,9 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
-
-
+" run table of contents
+nmap toc :Toc<cr><C-w>H:vertical resize 40<cr>
+let g:vim_markdown_toc_autofit=1
 
 set background=dark
 let g:solarized_termcolors=256
@@ -107,3 +108,16 @@ let g:task_rc_override = 'rc.defaultwidth=0'
 let g:task_report_name     = 'open'
 " custom reports have to be listed explicitly to make them available
 let g:task_report_command  = ['open']
+
+
+" try show only 80 columns
+set columns=80
+set colorcolumn=80 
+" autocmd VimResized * if (&columns > 80) | set columns=80 | endif
+autocmd VimResized | set columns=80 
+set wrap
+set linebreak
+"set showbreak=+++
+"set textwidth=80
+"set formatoptions+=t
+
