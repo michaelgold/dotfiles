@@ -80,6 +80,8 @@ let g:solarized_termcolors=256
 colorscheme solarized
 
 imap jj <esc>
+nmap j gj
+nmap k gk
 " disable mouse interactions "
 set mouse=nicr
 map <ScrollWheelUp> <nop>
@@ -159,9 +161,9 @@ autocmd bufread,bufnewfile *.md :Goyo
 "autocmd! User GoyoLeave Limelight!
 
 " Switch colorscheme to pencil when in Goyo and back to badwolf when leaving
- 
+
 function! s:goyo_enter()
-    let g:pencil_higher_contrast_ui = 1
+    let g:pencil_higher_contrast_ui = 0
     colorscheme pencil
     set background=dark
     Limelight0.5
