@@ -34,7 +34,7 @@ floating_modifier $mod
 # exec --no-startup-id /usr/bin/xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
 
 # set window borders to 2 pixel and remove the window title bar
-new_window pixel 1
+new_window pixel 0
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -247,6 +247,18 @@ bindsym $mod+r mode "resize"
 bar {
 	status_command i3blocks
 	position top
+
+
+	colors {
+		background #262626
+		statusline #F5DEB3
+
+		focused_workspace  #333333 #222222 #FDF6E3 
+		active_workspace   #F5DEB3 #333333
+		inactive_workspace #F5DEB3 #3F3F3F
+		urgent_workspace   #ffffff #6F546C
+	}
+
 
 }
 
