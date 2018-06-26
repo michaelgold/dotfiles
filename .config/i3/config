@@ -185,8 +185,8 @@ assign [class="VirtualBox" title="win10"] $WS8
 bindsym $mod+Shift+s exec --no-startup-id ~/.bin/scripts/lock.sh
 
 # show active tasks
-bindsym $mod+Shift+Return exec --no-startup-id /home/michael/src/taskwarrior-notifications/task-popup.sh
-bindsym $mod+Shift+semicolon exec --no-startup-id /home/michael/src/taskwarrior-notifications/task-popup-next.sh
+# bindsym $mod+Shift+Return exec --no-startup-id /home/michael/src/taskwarrior-notifications/task-popup.sh
+# bindsym $mod+Shift+semicolon exec --no-startup-id /home/michael/src/taskwarrior-notifications/task-popup-next.sh
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -267,15 +267,16 @@ focus_on_window_activation focus #or smart for urgency notificiations
 
 
 # load on start
+exec --no-startup-id compton --config ~/.compton.conf -b
 exec --no-startup-id syndaemon -i 2.0 -K -R -t  #disable touchpad on typing
 exec --no-startup-id synclient HorizEdgeScroll=0 VertEdgeScroll=0 VertScrollDelta=-150 TapButton1=0 TapButton2=0 CoastingSpeed=8 PalmDetect=1 PalmMinWidth=1 PalmMinZ=0 ClickTime=200 TapAndDragGesture=0 #natural scrolling and no tap to click
 exec --no-startup-id /usr/bin/xinput set-prop 'MX Anywhere 2' 'Evdev Scrolling Distance' 1, 1, 1 #scrolling speed
-exec --no-startup-id feh -Z --bg-fill /home/michael/Pictures/misc/reflect.jpg
+exec --no-startup-id feh -Z --bg-fill /home/michael/Pictures/misc/cool-background.png
 
 # exec --no-startup-id xsetroot -solid "#222222" 
-exec --no-startup-id conky -c ~/.config/conky/.conkyrc
-exec --no-startup-id conky -c ~/.config/conky/.conkytw
-exec --no-startup-id conky -c ~/.config/conky/.conkytwp
+exec --no-startup-id conky -c ~/.config/conky/.conkyl
+exec --no-startup-id conky -c ~/.config/conky/.conkym
+exec --no-startup-id conky -c ~/.config/conky/.conkyr
 
 
 exec --no-startup-id xautolock -time 5 -locker '~/.bin/scripts/lock.sh' -notify 5 -notifier "notify-send --expire-time=3000 'Locking'"
@@ -304,7 +305,9 @@ exec --no-startup-id dunst
 #exec --no-startup-id /usr/bin/xrandr --fb 1920x2160 --output DP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-2 --off --output eDP-1 --mode 1920x1080  --pos 0x1080 --rotate normal
 
 # start pomodoro daemon
-exec --no-startup-id pomodoro
+# exec --no-startup-id pomodoro
 
+# start dropbox
+exec --no-startup-id /usr/bin/dropbox start -i
 
 for_window [class="Chromium-browser" instance="crx_knipolnnllmklapflnccelgolnpehhpl"] floating disable border pixel 4

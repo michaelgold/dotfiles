@@ -16,7 +16,7 @@ values."
    ;; and `nil'. `unused' will lazy install only unused layers (i.e. layers
    ;; not listed in variable `dotspacemacs-configuration-layers'), `all' will
    ;; lazy install any layer that support lazy installation even the layers
-   ;; listed in `dotspacemacs-configuration-layers'. `nil' disable the lazy
+   ;; listed in `dotspacemacs-configuration-layers'. `nil' dissable the lazy
    ;; installation feature and you have to explicitly list a layer in the
    ;; variable `dotspacemacs-configuration-layers' to install it.
    ;; (default 'unused)
@@ -32,6 +32,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     html
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -44,10 +45,14 @@ values."
      ;; git
      ;; markdown
      org
+     pdf-tools
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     ;; spell-checking
+     ;; spell-checking 
+     (spell-checking :variables
+                     spell-checking-enable-by-default nil
+                     enable-flyspell-auto-completion t )
      ;; syntax-checking
      ;; version-control
      )
@@ -55,7 +60,13 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+                                      org-kanban
+                                      org-pdfview
+                                      org-noter
+                                      org-super-agenda
+                                      org-autolist
+                                      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -127,9 +138,11 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(material
-                         spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(
+                         monokai
+                        ;; spacemacs-dark
+                        ;; spacemacs-light
+                         )
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -312,6 +325,74 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  (use-package org-kanban)
+  (use-package org-pdfview)
+
+ (setq-default pdf-view-display-size 'fit-page)
+ ;; automatically annotate highlights
+ (setq pdf-annot-activate-created-annotations t)
+ ;; use isearch instead of swiper
+ (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward)
+ ;; turn off cua so copy works
+ (add-hook 'pdf-view-mode-hook (lambda () (cua-mode 0)))
+ ;; more fine-grained zooming
+ (setq pdf-view-resize-factor 1.1)
+ ;; keyboard shortcuts
+ (define-key pdf-view-mode-map (kbd "h") 'pdf-annot-add-highlight-markup-annotation)
+ (define-key pdf-view-mode-map (kbd "t") 'pdf-annot-add-text-annotation)
+ (define-key pdf-view-mode-map (kbd "D") 'pdf-annot-delete)
+ ;; wait until map is available
+ (with-eval-after-load "pdf-annot"
+   (define-key pdf-annot-edit-contents-minor-mode-map (kbd "<return>") 'pdf-annot-edit-contents-commit)
+   (define-key pdf-annot-edit-contents-minor-mode-map (kbd "<S-return>") 'newline)
+   ;; save after adding comment
+   (advice-add 'pdf-annot-edit-contents-commit :after 'bjm/save-buffer-no-args))
+
+ (use-package org-noter)
+
+ (use-package org-autolist)
+ (add-hook 'org-mode-hook (lambda () (org-autolist-mode)))
+
+ (with-eval-after-load 'org
+   (use-package org-super-agenda
+     :config (org-super-agenda-mode)
+
+     (setq org-super-agenda-groups
+
+             '(
+               (:name "DOING"
+                      :todo "DOING")
+               (:name "NEXT"
+                      :todo "NEXT"  ; Items that have this TODO keyword
+                      :priority "A")
+               (:name "TODO"
+                      :todo "TODO") ; Items that have this TODO keyword
+               (:priority<= "B"
+                      :order 1)
+               (:name "WAITING"
+                      :todo "WAITING") ; Items that have this TODO keyword
+               (:name "SOMEDAY"
+                      :scheduled "nil") ; Items that have not been scheduled
+               (:name "DONE"
+                      :time-grid t
+                      :not) ; everything else
+               )
+
+       )
+     )
+   )
+
+ (setq org-agenda-todo-ignore-scheduled t)
+ (setq org-deadline-warning-days 0)
+
+
+ (add-hook 'text-mode-hook #'visual-line-mode)
+
+ (setq line-move-visual t)
+ (define-key evil-motion-state-map "j" 'evil-next-visual-line)
+ (define-key evil-motion-state-map "k" 'evil-previous-visual-line)
+
+
 ;;; define categories that should be excluded
 (setq org-export-exclude-category (list "google" "private"))
 
@@ -328,12 +409,51 @@ you should place your code here."
 
 
 (with-eval-after-load 'org (setq org-agenda-files
-                                 '("~/Dropbox/org/")))
+                                 '("~/Dropbox/org/"))
+                      (setq org-startup-indented t) ; Enable `org-indent-mode' by default
+                      (add-hook 'org-mode-hook #'visual-line-mode)
+
+                      (setq org-agenda-custom-commands
+                            '(("X" agenda "" nil ("~/Dropbox/org/agenda.html")))
+                            )
+                      )
+
+(add-to-list 'org-file-apps '("\\.pdf\\'" . (lambda (file link) (org-pdfview-open link))))
+
+(setq org-agenda-default-appointment-duration 60)
+(setq org-icalendar-combined-agenda-file "~/Dropbox/org/org.ics")
+(setq org-icalendar-include-todo '(all))
+(setq org-icalendar-use-scheduled '(event-if-todo event-if-not-todo))
+(setq org-icalendar-use-deadline '(event-if-todo event-if-not-todo))
+
+;; this hook saves an ics file once an org-buffer is saved
+(defun my-icalendar-agenda-export()
+  (if (string= (file-name-extension (buffer-file-name)) "org")
+      (org-icalendar-combine-agenda-files))
+  )
+(add-hook 'after-save-hook 'my-icalendar-agenda-export)
+
+(setq org-agenda-span 10)
+(setq org-agenda-start-on-weekday nil)
+(setq org-agenda-start-day "-0d")
+
+;; (defun my-html-agenda-export()
+;;   if (string= (file-name-extension (buffer-file-name)) "org"))
+;;     ;; this hook saves an html file once an org-buffer is saved
+;;     (setq org-agenda-custom-commands
+;;       '(("X" agenda "" nil ("~/Dropbox/org/agenda.html")))
+;;       )
+;; (add-hook 'after-save-hook 'my-html-agenda-export)
+
+
+
 
 (setq org-directory "~/Dropbox/org/")
 (setq org-default-notes-file (concat org-directory "/notes.org"))
-
-(setq org-modules (quote (org-protocol)))
+(setq org-refile-targets '((nil :maxlevel . 9)
+                           (org-agenda-files :maxlevel . 9)))
+(setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
+(setq org-refile-use-outline-path t)                  ; Show full paths for refiling
 
 (setq org-capture-templates `(
                               ("S" "Protocol" entry (file+headline ,(concat org-directory "notes.org") "Inbox")
@@ -360,7 +480,7 @@ you should place your code here."
   (setq org-tstr-regexp (concat org-tst-regexp "--?-?" org-tst-regexp))
   (save-excursion
     ; get categories
-    (setq mycategory (org-get-category))
+    (setq mycategory (org-ge-category))
     ; get start and end of tree
     (org-back-to-heading t)
     (setq mystart    (point))
@@ -388,9 +508,12 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
+ '(org-agenda-custom-commands (quote (("X" agenda "" nil ("~/Dropbox/org/agenda.html")))))
  '(package-selected-packages
    (quote
-    (helm-company helm-c-yasnippet fuzzy company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+    (org-autolist org-super-agenda ht web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data darkula-theme org-noter org-attach-screenshot flyspell-popup flyspell-correct-helm flyspell-correct auto-dictionary interleave org-pdfview pdf-tools tablist org-kanban helm-company helm-c-yasnippet fuzzy company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

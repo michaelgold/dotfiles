@@ -1,1 +1,5 @@
-/opt/pycharm/bin/pycharm.sh
+#!/bin/sh
+#Generated with love at Thu Jun 14 13:17:44 2018 by JetBrains Toolbox 1.8.3678 (Mar 15 2018)
+
+"/home/michael/.local/share/JetBrains/Toolbox/apps/PyCharm-P/ch-0/181.4445.76/bin/pycharm.sh" "$@"
+

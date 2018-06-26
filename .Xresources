@@ -6,3 +6,142 @@
  Xft.dpi:       120 
 ! }}}
 Xcursor.size:   16 
+
+
+! xscreensaver ---------------------------------------------------------------
+
+!font settings
+xscreensaver.Dialog.headingFont:        -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.bodyFont:           -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.labelFont:          -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.unameFont:          -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.buttonFont:         -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.dateFont:           -*-fixed-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.passwd.passwdFont:         -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+!general dialog box (affects main hostname, username, password text)
+xscreensaver.Dialog.foreground:         #101010
+xscreensaver.Dialog.background:         #D8D8D8
+xscreensaver.Dialog.topShadowColor:     #D8D8D8
+xscreensaver.Dialog.bottomShadowColor:  #D8D8D8
+xscreensaver.Dialog.Button.foreground:  #101010
+xscreensaver.Dialog.Button.background:  #E5E5E5
+!username/password input box and date text colour
+xscreensaver.Dialog.text.foreground:    #101010
+xscreensaver.Dialog.text.background:    #E5E5E5
+xscreensaver.Dialog.internalBorderWidth:24
+xscreensaver.Dialog.borderWidth:        20
+xscreensaver.Dialog.shadowThickness:    2
+!timeout bar (background is actually determined by Dialog.text.background)
+xscreensaver.passwd.thermometer.foreground:  #101010
+xscreensaver.passwd.thermometer.background:  #2E2E2E
+xscreensaver.passwd.thermometer.width:       8
+
+
+! X cursor
+Xcursor.theme: Vanilla-DMZ
+! Xcursor.size: 16
+
+! XFT and Font settings
+Xft*dpi:       96
+Xft*antialias: true
+Xft*hinting:   true
+Xft*hintstyle: hintfull
+Xft*rgba:      rgb
+
+!*font: -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+*font: -*-terminus-medium-*-*-*-17-120-*-*-*-*-iso10646-1
+!*font: -*-proggyclean-*-*-*-*-*-80-*-*-*-*-*-*
+
+! General colors
+ *background: #0F0F0F
+ *foreground: #F5DEB3
+ *color0: #0F0F0F
+ *color1: #9e1828
+ *color2: #aece92
+ *color3: #968a38
+ *color4: #414171
+ *color5: #963c59
+ *color6: #418179
+ *color7: #bebebe
+ *color8: #666666
+ *color9: #cf6171
+ *color10: #c5f779
+ *color11: #fff796
+ *color12: #4186be
+ *color13: #cf9ebe
+ *color14: #71bebe
+ *color15: #efefef
+ *cursorColor: magenta
+
+! UXTerm
+UXTerm*bellIsUrgent: true
+!XTerm*saveLines: 4000
+
+!XTerm*background: #0F0F0F
+!XTerm*foreground: #F5DEB3
+!XTerm*color0: #000000
+!XTerm*color1: #9e1828
+!XTerm*color2: #aece92
+!XTerm*color3: #968a38
+!XTerm*color4: #414171
+!XTerm*color5: #963c59
+!XTerm*color6: #418179
+!XTerm*color7: #bebebe
+!XTerm*color8: #666666
+!XTerm*color9: #cf6171
+!XTerm*color10: #c5f779
+!XTerm*color11: #fff796
+!XTerm*color12: #4186be
+!XTerm*color13: #cf9ebe
+!XTerm*color14: #71bebe
+!XTerm*color15: #ffffff
+!XTerm*cursorColor: magenta
+
+! URxvt.geometry: 80x25
+URxvt.font: xft:Monospace:pixelsize=9
+URxvt*inheritPixmap: true
+URxvt*tintColor: gray30
+URxvt*internalBorder: 0
+URxvt*jumpScroll: true
+URxvt*urgentOnBell: true
+URxvt*visualBell: false
+! URxvt*loginShell: true
+URxvt*perl-ext-common: default,matcher,searchable-scrollback
+URxvt*pointerBlank: true
+URxvt*saveLines: 4000
+URxvt*secondaryScroll: true
+URxvt*scrollBar: false
+URxvt*scrollTtyKeypress: true
+URxvt*scrollWithBuffer: true
+URxvt*urlLauncher: /usr/bin/x-www-browser
+URxvt*colorUL: #c5f779
+URxvt*underlineColor: #c5f779
+
+!URxvt*cursorColor: magenta
+!URxvt*background: #0F0F0F
+!URxvt*foreground: #F5DEB3
+!URxvt*color0: #0F0F0F
+!URxvt*color1: #9e1828
+!URxvt*color2: #aece92
+!URxvt*color3: #968a38
+!URxvt*color4: #414171
+!URxvt*color5: #963c59
+!URxvt*color6: #418179
+!URxvt*color7: #bebebe
+!URxvt*color8: #666666
+!URxvt*color9: #cf6171
+!URxvt*color10: #c5f779
+!URxvt*color11: #fff796
+!URxvt*color12: #4186be
+!URxvt*color13: #cf9ebe
+!URxvt*color14: #71bebe
+!URxvt*color15: #efefef
+
+! Emacs.geometry: 80x50
+! Emacs*font: DejaVu Sans Mono-12
+Emacs.pane.menubar.shadowThickness: 1
+Emacs.pane.menubar.margin: 1
+Emacs.toolBar: off
+Emacs.menuBar: off
+Emacs.verticalScrollBars: off
+Emacs.cursorColor: magenta

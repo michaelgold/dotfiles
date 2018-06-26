@@ -21,4 +21,14 @@ if [ -d "$HOME/.bin" ] ; then
     PATH="$HOME/.bin:$HOME/.bin/scripts:$HOME/.screenlayout:$PATH"
 fi
 
+# set PATH so it includes user's local bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+# set PATH so it includes java bin if it exists
+if [ -d "$HOME/jdk1.8.0_161/bin" ] ; then
+    PATH="$HOME/jdk1.8.0_161/bin:$PATH"
+fi
+
 #source $HOME/.zshrc

@@ -94,3 +94,5 @@ antigen apply
 bindkey "jj" vi-cmd-mode
 bindkey 'ff' autosuggest-accept
 
+source /usr/local/bin/virtualenvwrapper.sh
+
