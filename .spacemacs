@@ -360,6 +360,13 @@ you should place your code here."
      (setq org-super-agenda-groups
 
              '(
+               (:log t)  ; Automatically named "Log"
+               (:name "DUE"
+                      :deadline today)
+               (:name "OVERDUE"
+                      :deadline past)
+               (:name "UPCOMING"
+                      :deadline future)
                (:name "DOING"
                       :todo "DOING")
                (:name "NEXT"
@@ -372,18 +379,19 @@ you should place your code here."
                (:name "WAITING"
                       :todo "WAITING") ; Items that have this TODO keyword
                (:name "SOMEDAY"
+                      :todo "SOMEDAY") ; Items that have this TODO keyword
+               (:name "UNSCHEDULED"
                       :scheduled "nil") ; Items that have not been scheduled
                (:name "DONE"
                       :time-grid t
                       :not) ; everything else
                )
-
        )
      )
    )
 
- (setq org-agenda-todo-ignore-scheduled t)
- (setq org-deadline-warning-days 0)
+ ;(setq org-agenda-todo-ignore-scheduled t)
+ (setq org-deadline-warning-days 14)
 
 
  (add-hook 'text-mode-hook #'visual-line-mode)
@@ -433,7 +441,7 @@ you should place your code here."
   )
 (add-hook 'after-save-hook 'my-icalendar-agenda-export)
 
-(setq org-agenda-span 10)
+(setq org-agenda-span 1)
 (setq org-agenda-start-on-weekday nil)
 (setq org-agenda-start-day "-0d")
 
@@ -469,6 +477,7 @@ you should place your code here."
         ("NEXT" . (:background "#e53935"))
         ("DOING" . (:background "#b71c1c" :weight bold))
         ("WAITING" . (:background "#455A64"))
+        ("SOMEDAY" . (:background "#455A64"))
         ("CANCELED" . (:backgroound "#80DEEA"))))
 
 )
@@ -498,6 +507,11 @@ you should place your code here."
 (defun org-mycal-export ()
   (let ((org-icalendar-verify-function 'org-mycal-export-limit))
     (org-export-icalendar-combine-agenda-files)))
+
+;;; Zoom text size on alt-mouse scroll
+(global-set-key [M-mouse-4] 'text-scale-decrease)
+(global-set-key [M-mouse-5] 'text-scale-increase)
+
 
 
 
