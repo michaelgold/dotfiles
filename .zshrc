@@ -1,5 +1,7 @@
 export TERM="xterm-256color"
 
+# printer user name
+
 source $HOME/antigen.zsh
 ANTIGEN_LOG=$HOME/.log/antigen.log
 
@@ -91,7 +93,7 @@ alias config="git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 # Tell Antigen that you're done.
 antigen apply
-bindkey "jj" vi-cmd-mode
+bindkey "fd" vi-cmd-mode
 bindkey 'ff' autosuggest-accept
 
 source /usr/local/bin/virtualenvwrapper.sh

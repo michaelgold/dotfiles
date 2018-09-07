@@ -43,6 +43,12 @@ bindsym $mod+Shift+b exec /usr/bin/chromium-browser --disable-gpu-driver-bug-wor
 bindsym $mod+Shift+g exec /usr/bin/chromium-browser --disable-gpu-driver-bug-workarounds --enable-native-gpu-memory-buffers --app=https://google.com
 
 
+# Scratchpad
+bindsym $mod+Shift+BackSpace move scratchpad
+bindsym $mod+backslash scratchpad show
+
+
+
 # take a screenshot
 bindsym ctrl+4 exec screenshot.sh
 
