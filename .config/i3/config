@@ -80,6 +80,10 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
+bindsym --whole-window button19 workspace prev
+bindsym --whole-window button17 workspace next
+
+
 bindsym $mod+ctrl+Shift+h move workspace to output left
 bindsym $mod+ctrl+Shift+l move workspace to output right
 # alternatively, you can use the cursor keys:
