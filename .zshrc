@@ -94,7 +94,7 @@ alias config="git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 # Tell Antigen that you're done.
 antigen apply
 bindkey "fd" vi-cmd-mode
-bindkey 'ff' autosuggest-accept
+bindkey 'fg' autosuggest-accept
 
 source /usr/local/bin/virtualenvwrapper.sh
 
