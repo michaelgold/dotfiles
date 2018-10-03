@@ -177,8 +177,8 @@ bindsym $MOD+Shift+8 move container to workspace $WS8
 ## Application preferences
 assign [class="Thunderbird"] $WS1
 assign [class="Slack"] $WS1
-assign [class="Chromium-browser" instance="crx_knipolnnllmklapflnccelgolnpehhpl"] $WS1
-assign [class="Chromium-browser" instance="crx_nckgahadagoaajjgafhacjanaoiihapd"] $WS1 # hangouts plugin
+assign [class="Chromium-browser" instance="crx_knipolnnllmklapflnccelgolnpehhpl"] $WS3
+assign [class="Chromium-browser" instance="crx_nckgahadagoaajjgafhacjanaoiihapd"] $WS1
 assign [class="Chromium-browser" instance="mail.google.com__mail_u_0"] $WS1
 assign [class="Firefox"] $WS2
 assign [class="Chromium-browser"] $WS2
