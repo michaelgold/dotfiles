@@ -21,7 +21,7 @@ else
 fi
 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
 
-/home/michael/.screenlayout/laptop.sh
+# /home/michael/.screenlayout/laptop.sh
 i3lock -i $TEMPDIR/screen.png
 #i3lock -u -i $TEMPDIR/screen.png
 rm $TEMPDIR/screen.png
