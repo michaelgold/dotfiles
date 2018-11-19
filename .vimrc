@@ -79,7 +79,7 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 
-imap jj <esc>
+imap fd  <esc>
 nmap j gj
 nmap k gk
 " disable mouse interactions "
