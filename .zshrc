@@ -89,7 +89,7 @@ alias tn="task next"
 alias tg="task _get"
 alias tw="vim -c 'TW'"
 alias config="git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
-export PATH="/opt/anaconda3/bin:$PATH"
+export PATH="/opt/anaconda3/bin:$HOME/.local/bin:$PATH"
 
 # Tell Antigen that you're done.
 antigen apply
