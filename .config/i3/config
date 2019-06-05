@@ -288,9 +288,9 @@ for_window [class="photoshop.exe"] border normal 0
 # load on start
 exec --no-startup-id compton --config ~/.compton.conf -b
 
-exec --no-startup-id syndaemon -i 2.0 -R -t #disable touchpad on typing
-exec --no-startup-id synclient HorizEdgeScroll=0 VertEdgeScroll=0 VertScrollDelta=-150 TapButton1=0 TapButton2=0 CoastingSpeed=8 PalmDetect=1 PalmMinWidth=1 PalmMinZ=0 ClickTime=200 TapAndDragGesture=0 RTCornerButton=0 ClickFinger2=0 #natural scrolling and no tap to click
-exec --no-startup-id /usr/bin/xinput set-prop 'MX Anywhere 2' 'Evdev Scrolling Distance' 1, 1, 1 #scrolling speed
+# exec --no-startup-id syndaemon -i 2.0 -R -t #disable touchpad on typing
+# exec --no-startup-id synclient HorizEdgeScroll=0 VertEdgeScroll=0 VertScrollDelta=-150 TapButton1=0 TapButton2=0 CoastingSpeed=8 PalmDetect=1 PalmMinWidth=1 PalmMinZ=0 ClickTime=200 TapAndDragGesture=0 RTCornerButton=0 ClickFinger2=0 #natural scrolling and no tap to click
+# exec --no-startup-id /usr/bin/xinput set-prop 'MX Anywhere 2' 'Evdev Scrolling Distance' 1, 1, 1 #scrolling speed
 exec --no-startup-id feh -Z --bg-fill /home/michael/Pictures/misc/cool-background.png
 
 # exec --no-startup-id xsetroot -solid "#222222" 
@@ -299,25 +299,25 @@ exec --no-startup-id conky -c ~/.config/conky/.conkym
 exec --no-startup-id conky -c ~/.config/conky/.conkyr
 
 
-exec --no-startup-id xautolock -time 5 -locker '~/.bin/scripts/lock.sh' -notify 5 -notifier "notify-send --expire-time=3000 'Locking'"
+# exec --no-startup-id xautolock -time 5 -locker '~/.bin/scripts/lock.sh' -notify 5 -notifier "notify-send --expire-time=3000 'Locking'"
 
-exec --no-startup-id /usr/local/bin/task-web #taskwarrior web
+# exec --no-startup-id /usr/local/bin/task-web #taskwarrior web
 #exec --no-startup-id /usr/bin/imwheel --kill --buttons "4 5" #natural mouse scrolling
  
 # load wifi applet
-exec --no-startup-id /usr/bin/nm-applet 
+# exec --no-startup-id /usr/bin/nm-applet 
 
 
 # load bluetooth applet
-exec --no-startup-id /usr/bin/blueman-applet 
+# exec --no-startup-id /usr/bin/blueman-applet 
 
 
 # load audio applet
-exec --no-startup-id /usr/bin/pasystray 
+# exec --no-startup-id /usr/bin/pasystray 
 
 # kill default notifications 
-exec --no-startup-id killall -q /usr/lib/x86_64-linux-gnu/notify-osd
-exec --no-startup-id dunst
+# exec --no-startup-id killall -q /usr/lib/x86_64-linux-gnu/notify-osd
+# exec --no-startup-id dunst
 
 # exec --no-startup-id /usr/bin/xrandr --output HDMI-1 --off --output DP-1 --off --output DP-2 --primary --mode 1920x1080 --scale 2x2 --fb 3840x4320 --pos 0x0 --rotate normal 
 # exec --no-startup-id /usr/bin/xrandr --output eDP-1 --mode 3840x2160 --scale 1x1 --pos 0x2160 --rotate normal
