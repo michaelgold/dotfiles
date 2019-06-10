@@ -49,7 +49,7 @@ POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon ip dir vcs)
 
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir virtualenv vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 
 
 
@@ -89,6 +89,7 @@ alias tn="task next"
 alias tg="task _get"
 alias tw="vim -c 'TW'"
 alias config="git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+alias pycharm="/mnt/c/Users/goldm/AppData/Local/JetBrains/Toolbox/apps/PyCharm-P/ch-0/191.7479.30/bin/pycharm64.exe"
 export PATH="/opt/anaconda3/bin:$HOME/.local/bin:$PATH"
 
 # Tell Antigen that you're done.
@@ -97,5 +98,5 @@ bindkey "fd" vi-cmd-mode
 bindkey 'fg' autosuggest-accept
 
 export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python3"
-source /usr/local/bin/virtualenvwrapper.sh
+# source /usr/local/bin/virtualenvwrapper.sh
 
