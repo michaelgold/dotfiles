@@ -1,3 +1,7 @@
+case $(uname -a) in
+   *Microsoft*) unsetopt BG_NICE ;;
+esac
+
 export TERM="xterm-256color"
 
 # printer user name
